@@ -1,7 +1,6 @@
 # loklak webtweets
-FOSSASIA Tweets with loklak
 
-Implement Webtweets with loklak and Improve implementation
+FOSSASIA Tweets with loklak: Implement Webtweets with loklak
 
 **Objective of the mini project**
 
