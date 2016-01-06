@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="loklak">
     <head>
         <meta charset="utf-8">
         <title>Meetup</title>
@@ -41,14 +41,11 @@
 						
 				
 						<div class="row">
-							<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
-								<div class="twitter-feed">
-									<i class="icon social_twitter text-white"></i>
-									<div class="tweets-feed" data-widget-id="683016066298167297">
-							
-									</div>
-									<span class="text-white">Follow <a href="http://fossasia.org" target="default">@fossasia</a>&nbsp;for more updates</span>
-								</div>
+							<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center" ng-controller="tweets">
+                                <div>
+                                    <p class="text-white" ng-repeat='result in results'><big>{{result.text}}</big><br><br></p>
+                                    <span class="text-white">Follow <a href="http://fossasia.org" target="default">@fossasia</a>&nbsp;for more updates</span>
+                                </div>
 							</div>
 						</div>
 				
@@ -76,9 +73,12 @@
         <script src="js/jquery.countdown.min.js"></script>
         <script src="js/lightbox.min.js"></script>
         <script src="js/smooth-scroll.min.js"></script>
-        <script src="js/twitterfetcher.min.js"></script>
         <script src="js/placeholders.min.js"></script>
         <script src="js/scripts.js"></script>
+        <!-- load angular via CDN -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+        <!--angularjs scripts-->
+        <script src="js/ngscript.js"></script>
     </body>
 </html>
 				
