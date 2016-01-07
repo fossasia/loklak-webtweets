@@ -388,6 +388,7 @@ p a,
   background: #0072bc;
   text-align: center;
   padding: 13px 0px 14px 0px;
+  margin: 10px;
   color: #fff;
   font-size: 15px;
   transition: all 0.3s ease-out;
@@ -395,6 +396,9 @@ p a,
   -moz-transition: all 0.3s ease-out;
   font-weight: 600;
   line-height: 1;
+  float:right;
+  display: inline;
+  position: relative;
 }
 .btn:hover {
   color: #fff;
@@ -2188,6 +2192,10 @@ form .field-error {
   width: 100%;
   background: rgba(255, 255, 255, 0.3);
   margin-bottom: 32px;
+}
+.footer .top-border a{
+  color: #fff !important;
+  text-decoration: none !important;
 }
 .footer .menu {
   overflow: visible;

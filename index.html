@@ -1,84 +1,59 @@
-
-<!doctype html>
-<html lang="en" ng-app="loklak">
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <title>Meetup</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8"/>
+        <title>FOSSASIA Webtweets</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
-        <link href="css/flexslider.min.css" rel="stylesheet" type="text/css" media="all"/>
         <link href="css/elegant-icons.min.css" rel="stylesheet" type="text/css" media="all"/>
-        <link href="css/pe-icon-7-stroke.min.css" rel="stylesheet" type="text/css" media="all"/>
-        <link href="css/lightbox.min.css" rel="stylesheet" type="text/css" media="all"/>
         <link href="css/theme.css" rel="stylesheet" type="text/css" media="all"/>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/smooth-scroll.min.js"></script>
+        <script src="js/tweets.js"></script>
+        <script src="js/loklak-fetcher.js"></script>
     </head>
-    <body>
-    
-    	<div class="loader">
-    		<div class="strip-holder">
-				<div class="strip-1"></div>
-				<div class="strip-2"></div>
-				<div class="strip-3"></div>
-    		</div>
-    	</div>
-    	
-    	<a id="top"></a>
-				
+    <body onload="datafetcher('fossasia')">
 		<div class="nav-container"></div>
-		<div class="main-container"><section class="subscribe-1">
-					<div class="background-image-holder parallax-background">
-						<img class="background-image" alt="Background Image" src="">
+		<div class="main-container">
+			<section class="subscribe-1">
+				<div class="background-image-holder parallax-background">
+					<img class="background-image" alt="Background Image" src="">
+				</div>
+		
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<h1 class="large-h1 text-white">Twitter Updates</h1>
+						</div>
 					</div>
-			
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-12 text-center">
-								<h1 class="large-h1 text-white">Twitter Updates</h1>
-							</div>
-						</div>
-				
-						
-				
-						<div class="row">
-							<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center" ng-controller="tweets">
-                                <div>
-                                    <p class="text-white" ng-repeat='result in results'><big>{{result.text}}</big><br><br></p>
-                                    <span class="text-white">Follow <a href="http://fossasia.org" target="default">@fossasia</a>&nbsp;for more updates</span>
-                                </div>
-							</div>
-						</div>
-				
-						<div class="row">
-							<div class="footer">
-								<div class="col-sm-12">
-									<div class="top-border"></div>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+							<div class="twitter-feed">
+								<i class="icon social_twitter text-white"></i>
+								<div class="tweets-feed" id="tweets">
 								</div>
-								
-						
-								
+								<div class="btn" onclick="nextTweet()">
+									Next Tweet ! &nbsp; &#8594;
+								</div>
 							</div>
 						</div>
+					</div>				
+					<div class="row">
+						<div class="footer">
+							<div class="col-sm-12 text-center">
+								<div class="top-border">
+									<p class="text-white">This WebApp uses the <a href="http://loklak.org">Loklak Server</a> to fetch the Tweets</p>
+									<p class="text-white">Follow <a href="http://fossasia.org" target="default">@fossasia</a>&nbsp;for more updates</p>
+								</div>
+							</div>						
+						</div>
 					</div>
-				</section>
+				</div>
+			</section>
 		</div>
 		<div class="footer-container"></div>
-				
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/skrollr.min.js"></script>
-        <script src="js/spectragram.min.js"></script>
-        <script src="js/flexslider.min.js"></script>
-        <script src="js/jquery.plugin.min.js"></script>
-        <script src="js/jquery.countdown.min.js"></script>
-        <script src="js/lightbox.min.js"></script>
-        <script src="js/smooth-scroll.min.js"></script>
-        <script src="js/placeholders.min.js"></script>
-        <script src="js/scripts.js"></script>
-        <!-- load angular via CDN -->
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
-        <!--angularjs scripts-->
-        <script src="js/ngscript.js"></script>
     </body>
 </html>
 				
