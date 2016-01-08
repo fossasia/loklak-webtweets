@@ -1819,9 +1819,20 @@ p.question {
   overflow: hidden;
   padding-top: 72px;
   padding-bottom: 36px;
+  background-image: 
+   repeating-linear-gradient(0deg, 
+      transparent 0,
+      transparent 5px, 
+      rgba(0, 0, 0, .1) 5px, 
+      rgba(0, 0, 0, .1) 10px),
+   repeating-linear-gradient(90deg, 
+      transparent 0,
+      transparent 5px, 
+      rgba(0, 0, 0, .1) 5px, 
+      rgba(0, 0, 0, .1) 10px);
 }
 .subscribe-1:before {
-  background-color: #333333;
+  background-color: #08629E;
   opacity: 0.4;
   position: absolute;
   content: '';
@@ -2196,7 +2207,7 @@ form .field-error {
   height: 2px;
   width: 100%;
   background: rgba(255, 255, 255, 0.3);
-  margin-bottom: 144px;
+  margin-bottom: 90px;
   margin-top: 144px
 }
 .footer .top-border a{
@@ -2206,6 +2217,8 @@ form .field-error {
 }
 .footer .top-border p{
   padding: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 .footer .menu {
   overflow: visible;
