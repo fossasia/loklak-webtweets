@@ -1872,9 +1872,9 @@ p.question {
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
 }
-.tweets-feed .tweet a {
+.tweets-feed .tweet a, a:visited, a:link{
   color: #fff !important;
-  border-color: #fff !important;
+  border-bottom: none !important;
 }
 .tweets-feed .timePosted {
   display: none;
