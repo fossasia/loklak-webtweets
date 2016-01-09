@@ -9,14 +9,20 @@ function datahandler(raw) {
 
 var tweetNum = 0;
 
+function parseFunc(){
+	parser(stuff)
+}
+
 function nextTweet() {
 	tweetNum += 1;
-	parser(stuff);
+	document.getElementById("tweet").style.opacity =  0;
+	window.setTimeout(parseFunc, 560);
 }
 function lastTweet() {
 	if (tweetNum > 0) {
 		tweetNum -= 1;
-		parser(stuff);
+		document.getElementById("tweet").style.opacity =  0;
+		window.setTimeout(parseFunc, 560);
 	}
 }
 
@@ -41,5 +47,6 @@ function parser(data) {
 			parsed += words[word] + " ";
 		}
 	}
-	document.getElementById("tweets").innerHTML = "<p class='tweet'>" + parsed + "</p>";
+	document.getElementById("tweet").innerHTML =  parsed;
+	document.getElementById("tweet").style.opacity =  1;
 }

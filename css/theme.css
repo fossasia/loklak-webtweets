@@ -1862,6 +1862,11 @@ p.question {
   display: block;
   margin-top: 12px;
 }
+.tweets-feed{
+  background-color: rgba(242, 245, 247, 0.41);
+  border-radius: 5px;
+  border: 2px solid #fff;
+}
 .twitter-feed i {
   font-size: 48px;
   display: inline-block;
@@ -1878,13 +1883,15 @@ p.question {
 }
 .tweets-feed .tweet {
   color: #000;
-  background-color: white;
-  border-radius: 5px;
-  border: 2px solid #fff;
   font-size: 30px;
   line-height: 36px;
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 200;
+  word-break: break-all;
+  padding: 10px;
+}
+#tweet{
+  transition: all .5s;
 }
 .tweets-feed .tweet a, a:visited, a:link{
   color: #000 !important;
