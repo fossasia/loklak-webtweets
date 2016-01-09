@@ -1,6 +1,17 @@
+var interval_id = null;
+
+function Interval() {
+	if (interval_id !== null){
+		clearInterval(interval_id)
+		interval_id = window.setInterval(nextTweet, 6600); //6.6 secs
+	} else{
+		interval_id = window.setInterval(nextTweet, 6600); //6.6 secs
+	}
+}
+
 function datafetcher(key) {
 	loklakFetcher.getTweets(key, {}, datahandler);
-	window.setInterval(nextTweet, 6600); //6.6 secs
+	Interval();
 }
 
 function datahandler(raw) {
@@ -16,12 +27,14 @@ function parseFunc(){
 
 function nextTweet() {
 	tweetNum += 1;
+	Interval();
 	document.getElementById("tweet").style.opacity =  0;
 	window.setTimeout(parseFunc, 560);
 }
 function lastTweet() {
 	if (tweetNum > 0) {
 		tweetNum -= 1;
+		Interval();
 		document.getElementById("tweet").style.opacity =  0;
 		window.setTimeout(parseFunc, 560);
 	}
