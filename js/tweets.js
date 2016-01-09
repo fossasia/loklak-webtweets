@@ -1,5 +1,17 @@
+var interval_id = null;
+
+function Interval() {
+	if (interval_id !== null){
+		clearInterval(interval_id)
+		interval_id = window.setInterval(nextTweet, 6600); //6.6 secs
+	} else{
+		interval_id = window.setInterval(nextTweet, 6600); //6.6 secs
+	}
+}
+
 function datafetcher(key) {
 	loklakFetcher.getTweets(key, {}, datahandler);
+	Interval();
 }
 
 function datahandler(raw) {
@@ -9,14 +21,22 @@ function datahandler(raw) {
 
 var tweetNum = 0;
 
+function parseFunc(){
+	parser(stuff)
+}
+
 function nextTweet() {
 	tweetNum += 1;
-	parser(stuff);
+	Interval();
+	document.getElementById("tweet").style.opacity =  0;
+	window.setTimeout(parseFunc, 560);
 }
 function lastTweet() {
 	if (tweetNum > 0) {
 		tweetNum -= 1;
-		parser(stuff);
+		Interval();
+		document.getElementById("tweet").style.opacity =  0;
+		window.setTimeout(parseFunc, 560);
 	}
 }
 
@@ -41,5 +61,6 @@ function parser(data) {
 			parsed += words[word] + " ";
 		}
 	}
-	document.getElementById("tweets").innerHTML = "<p class='tweet'>" + parsed + "</p>";
+	document.getElementById("tweet").innerHTML =  parsed;
+	document.getElementById("tweet").style.opacity =  1;
 }
