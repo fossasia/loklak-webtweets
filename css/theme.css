@@ -1819,16 +1819,16 @@ p.question {
   overflow: hidden;
   padding-top: 72px;
   padding-bottom: 36px;
-  background-image: 
-   repeating-linear-gradient(0deg, 
+  background-image:
+   repeating-linear-gradient(0deg,
       transparent 0,
-      transparent 5px, 
-      rgba(0, 0, 0, .1) 5px, 
+      transparent 5px,
+      rgba(0, 0, 0, .1) 5px,
       rgba(0, 0, 0, .1) 10px),
-   repeating-linear-gradient(90deg, 
+   repeating-linear-gradient(90deg,
       transparent 0,
-      transparent 5px, 
-      rgba(0, 0, 0, .1) 5px, 
+      transparent 5px,
+      rgba(0, 0, 0, .1) 5px,
       rgba(0, 0, 0, .1) 10px);
 }
 .subscribe-1:before {
@@ -1877,14 +1877,17 @@ p.question {
   display: none;
 }
 .tweets-feed .tweet {
-  color: #fff;
+  color: #000;
+  background-color: white;
+  border-radius: 5px;
+  border: 2px solid #fff;
   font-size: 30px;
   line-height: 36px;
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 200;
 }
 .tweets-feed .tweet a, a:visited, a:link{
-  color: #fff !important;
+  color: #000 !important;
   border-bottom: none !important;
 }
 .tweets-feed .timePosted {
