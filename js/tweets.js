@@ -1,5 +1,6 @@
 function datafetcher(key) {
 	loklakFetcher.getTweets(key, {}, datahandler);
+	window.setInterval(nextTweet, 6600); //6.6 secs
 }
 
 function datahandler(raw) {
