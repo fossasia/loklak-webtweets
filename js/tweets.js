@@ -9,8 +9,8 @@ function Interval() {
 	}
 }
 
-function datafetcher(key) {
-	loklakFetcher.getTweets(key, {}, datahandler);
+function datafetcher() {
+	loklakFetcher.getTweets({}, datahandler);
 	Interval();
 }
 
@@ -27,6 +27,11 @@ function parseFunc(){
 
 function nextTweet() {
 	tweetNum += 1;
+	var tweetsEl = document.getElementById('tweets');
+	//go back to the first tweet if it's greater than the amount of tweets available
+	if(tweetNum == tweetsEl.dataset.count) {
+		tweetNum = 0;
+	}
 	Interval();
 	document.getElementById("tweet").style.opacity =  0;
 	window.setTimeout(parseFunc, 560);
