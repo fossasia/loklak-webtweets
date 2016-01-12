@@ -9,8 +9,8 @@ function Interval() {
 	}
 }
 
-function datafetcher(key) {
-	loklakFetcher.getTweets(key, {}, datahandler);
+function datafetcher() {
+	loklakFetcher.getTweets({}, datahandler);
 	Interval();
 }
 

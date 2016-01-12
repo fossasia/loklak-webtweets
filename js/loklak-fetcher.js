@@ -12,13 +12,12 @@ window.loklakFetcher = (function() {
   var loklakFetcher = {
     /**
      * Fetches tweets from the public loklak API, with the options provided
-     * @param  {string}   query    Query string, see loklak.org/api.html
      * @param  {object}   options  Object with allowed GET-attributes, see
      *                             loklak.org/api.html
      * @param  {function} callback Function called after getting the results.
      *                             These are passed as first argument
      */
-    getTweets: function(query, options, callback) {
+    getTweets: function(options, callback) {
       if(typeof options === 'function') { // A callback has been provided as 2nd
                                           // argument (no options)
         var callback = options;
@@ -36,14 +35,26 @@ window.loklakFetcher = (function() {
       if(typeof options === 'undefined') {
         var options = {}; // Create 'options' to avoid ReferenceErrors later
       }
+      
+      //Check if there are any data elements set
+      var tweetsEl = document.getElementById("tweets");
+      if(tweetsEl.dataset.count) {
+        options[settings[0]] = tweetsEl.dataset.count; //count is index 0
+      }
+      
+      if(tweetsEl.dataset.query) {
+        var query = tweetsEl.dataset.query;
+      } else {
+        var query = "fossasia";
+      }
 
       // Write unset options as their default
       for(index in settings) {
         if(options[settings[index]] === undefined) {
           options[settings[index]] = defaults[index];
-        }
+        } 
       }
-
+      
       // Create the URL with all the parameters
       var url = 'http://loklak.org/api/search.json' +
         '?callback=loklakFetcher.handleData' +

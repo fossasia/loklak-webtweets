@@ -14,7 +14,7 @@
         <script src="js/tweets.js"></script>
         <script src="js/loklak-fetcher.js"></script>
     </head>
-    <body onload="datafetcher('fossasia')">
+    <body onload="datafetcher()">
 		<div class="nav-container"></div>
 		<div class="main-container">
 			<section class="subscribe-1">
@@ -29,7 +29,8 @@
 						<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
 							<div class="twitter-feed">
 								<i class="icon social_twitter text-white"></i>
-								<div class="tweets-feed" id="tweets">
+                <!-- Change the data-count to desired number of circulating tweets and data-query to the search terms you desire. -->
+								<div class="tweets-feed" id="tweets" data-count=5 data-query="fossasia">
 									<div class="arrow-up"></div>
 									<p id="tweet" class="tweet"></p>
 								</div>
