@@ -9,6 +9,7 @@ Implement web tweets with loklak and substitute the implementation with twitter.
 **Requirements**
 
 - use loklak API at http://loklak.org/api.html
+- 
 
 **Expected Outcome**
 
@@ -20,3 +21,6 @@ Implement web tweets with loklak and substitute the implementation with twitter.
 - loklak API http://loklak.org/api.html
 - Repository https://github.com/fossasia/fossasia-loklak-webtweets
 - Sample http://fossasia.github.io/fossasia-loklak-webtweets/
+
+**Directions**
+- To change the number of tweets being recycled, change the *data-count* attribute in the HTML of the div with class "tweets-feed". To change the query, change the *data-query* attribute to preference.
