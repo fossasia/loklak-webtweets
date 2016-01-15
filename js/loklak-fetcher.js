@@ -38,14 +38,27 @@ window.loklakFetcher = (function() {
       
       //Check if there are any data elements set
       var tweetsEl = document.getElementById("tweets");
-      if(tweetsEl.dataset.count) {
-        options[settings[0]] = tweetsEl.dataset.count; //count is index 0
+      var dataset = tweetsEl.dataset;
+      if(dataset.count) {
+        options[settings[0]] = dataset.count; //count is index 0
       }
       
-      if(tweetsEl.dataset.query) {
-        var query = tweetsEl.dataset.query;
+      if(dataset.query) {
+        var query = dataset.query.replace(/\s/gi, '%20').replace(/#/gi, '%23'); //replace spaces and hashtags in URL
       } else {
         var query = "fossasia";
+      }
+      
+      if(dataset.start) {
+        query = query + "%20since:" + dataset.start;
+      }
+      
+      if(dataset.end) {
+        query = query + "%20until:" + dataset.end;
+      }
+      
+      if(dataset.from) {
+        query = query + "%20from:" + dataset.from;
       }
 
       // Write unset options as their default
@@ -65,7 +78,7 @@ window.loklakFetcher = (function() {
         '&limit=' + options.limit +
         '&timezoneOffset=' + options.tzOffset +
         '&minified=' + options.minified;
-
+console.log(url);
       // If the script element for JSONP already exists, remove it
       if(script !== null) {
         document.head.removeChild(script);
