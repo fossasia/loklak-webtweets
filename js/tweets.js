@@ -60,7 +60,7 @@ function parser(data) {
 				parsed += "<a href='" + data.statuses[tweetNum].links[loklakLinkCount] + "' target='_blank'>" + data.statuses[tweetNum].links[loklakLinkCount] + "</a> ";
 				loklakLinkCount += 1;
 			} else {
-				parsed += "<a href='" + words[word] + "' target='_blank'>" + words[word] + "</a> ";
+				parsed += "<a href='" + words[word] + "' target='_blank' style='word-break:break-all'>" + words[word] + "</a> ";
 			}
 		} else {
 			parsed += words[word] + " ";
