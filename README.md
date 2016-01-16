@@ -23,4 +23,15 @@ Implement web tweets with loklak and substitute the implementation with twitter.
 - Sample http://fossasia.github.io/fossasia-loklak-webtweets/
 
 **Directions**
-- To change the number of tweets being recycled, change the *data-count* attribute in the HTML of the div with class "tweets-feed". To change the query, change the *data-query* attribute to preference.
+- To change the number of tweets being recycled, change the *data-count* attribute in the HTML of the div with class "tweets-feed". To change the query, change the *data-query* attribute to preference.  
+- To require specific users and hashtags to be in the tweets, add a @ or # sign in front of the word, respectively. Separate each word by a space.  
+- To require the tweet to be in a timeframe of days, add the attributes below to the "tweets-feed class":  
+
+```
+data-start='YYYY-MM-DD' 
+data-end='YYYY-MM-DD'
+```
+- To filter out tweets from one user, add the *data-from* attribute.  
+
+An example of the attributes:  
+`<div class="tweets-feed" id="tweets" data-count=50 data-query="fossasia #googlecodein" data-start="2015-12-08" data-end="2016-01-14"  data-from="fossasia">`
