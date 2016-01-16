@@ -11,12 +11,12 @@ function interval() {
 
 function datafetcher() {
 	loklakFetcher.getTweets({}, datahandler);
-	interval();
 }
 
 function datahandler(raw) {
 	stuff = raw;   // Makes the data available globally.
 	parser(stuff);
+	interval();
 }
 
 var tweetNum = 0;
