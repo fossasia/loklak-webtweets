@@ -1,8 +1,8 @@
 var interval_id = null;
 
-function Interval() {
+function interval() {
 	if (interval_id !== null){
-		clearInterval(interval_id)
+		clearInterval(interval_id);
 		interval_id = window.setInterval(nextTweet, 6600); //6.6 secs
 	} else{
 		interval_id = window.setInterval(nextTweet, 6600); //6.6 secs
@@ -11,18 +11,18 @@ function Interval() {
 
 function datafetcher() {
 	loklakFetcher.getTweets({}, datahandler);
-	Interval();
+	interval();
 }
 
 function datahandler(raw) {
-	stuff = raw;   //Makes the data available globally.
+	stuff = raw;   // Makes the data available globally.
 	parser(stuff);
 }
 
 var tweetNum = 0;
 
 function parseFunc(){
-	parser(stuff)
+	parser(stuff);
 }
 
 function nextTweet() {
@@ -32,25 +32,27 @@ function nextTweet() {
 	if(tweetNum == tweetsEl.dataset.count) {
 		tweetNum = 0;
 	}
-	Interval();
-	document.getElementById("tweet").style.opacity =  0;
+	interval();
+	document.getElementById("tweet").style.opacity = 0;
+	document.getElementById("tweet-info").style.opacity = 0;
 	window.setTimeout(parseFunc, 560);
 }
 function lastTweet() {
 	if (tweetNum > 0) {
 		tweetNum -= 1;
-		Interval();
-		document.getElementById("tweet").style.opacity =  0;
+		interval();
+		document.getElementById("tweet").style.opacity = 0;
+		document.getElementById("tweet-info").style.opacity = 0;
 		window.setTimeout(parseFunc, 560);
 	}
 }
 
 function parser(data) {
-	var parsed = ""
+	var parsed = "";
 	var tweet = data.statuses[tweetNum].text;
 	var words = tweet.split(" ");
 	var loklakLinkCount = 0;
-	for (word in words) {
+	for (var word in words) {
 		if (words[word].startsWith("@")) {
 			parsed += "<a href='https://twitter.com/" + words[word].slice(1) + "' target='_blank'>" + words[word] + "</a> ";
 		} else if (words[word].startsWith("#")) {
@@ -66,6 +68,12 @@ function parser(data) {
 			parsed += words[word] + " ";
 		}
 	}
-	document.getElementById("tweet").innerHTML =  parsed;
-	document.getElementById("tweet").style.opacity =  1;
+	document.getElementById("tweet").innerHTML = parsed;
+
+	var user = data.statuses[tweetNum].user;
+	var tweetDate = new Date(data.statuses[tweetNum].created_at);
+	document.getElementById("tweet-info").innerHTML = "Posted by <a href='https://twitter.com/" + user.screen_name + "'><b>" + user.name + "</b></a>, <a href='" + data.statuses[tweetNum].link + "'><i>" + tweetDate.toUTCString() + "</i></a>";
+
+	document.getElementById("tweet").style.opacity = 1;
+	document.getElementById("tweet-info").style.opacity = 1;
 }
