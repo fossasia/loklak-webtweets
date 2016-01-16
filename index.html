@@ -18,7 +18,7 @@
 		<div class="nav-container"></div>
 		<div class="main-container">
 			<section class="subscribe-1">
-		
+
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12 text-center">
@@ -32,25 +32,29 @@
                 <!-- Change the data-count to desired number of circulating tweets and data-query to the search terms you desire. -->
 								<div class="tweets-feed" id="tweets" data-count=50 data-query="fossasia #gci">
 									<div class="arrow-up"></div>
-									<p id="tweet" class="tweet"></p>
+									<p id="tweet" class="tweet">
+                    <div class="panel-footer">
+                      <span id="tweet-info"></span>
+                    </div>
+                  </p>
 								</div>
 								<div class="btn" id="previous"onclick="lastTweet()">
-									&#8592; &nbsp; Previous Tweet !
+									&#8592; &nbsp; Previous Tweet!
 								</div>
 								<div class="btn" id="next"onclick="nextTweet()">
-									Next Tweet ! &nbsp; &#8594;
+									Next Tweet! &nbsp; &#8594;
 								</div>
 							</div>
 						</div>
-					</div>				
+					</div>
 					<div class="row">
 						<div class="footer">
 							<div class="col-sm-12 text-center">
 								<div class="top-border">
-									<p class="text-white">This WebApp uses the <a href="http://loklak.org">Loklak Server</a> to fetch the Tweets</p>
+									<p class="text-white">This WebApp uses the <a href="http://loklak.org">loklak Server</a> to fetch the Tweets</p>
 									<p class="text-white">Follow <a href="http://fossasia.org" target="default">@fossasia</a>&nbsp;for more updates</p>
 								</div>
-							</div>						
+							</div>
 						</div>
 					</div>
 				</div>
@@ -59,4 +63,3 @@
 		<a href="https://github.com/fossasia/fossasia-loklak-webtweets"><img style="z-index:1;position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
     </body>
 </html>
-				

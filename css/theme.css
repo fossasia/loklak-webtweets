@@ -1891,8 +1891,8 @@ p.question {
   padding: 10px;
 }
 .arrow-up {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
   border-bottom: 15px solid white;
@@ -1902,8 +1902,15 @@ p.question {
   margin-left: -15px;
   left: 50%;
 }
-#tweet{
-  transition: all .5s;
+#tweet, #tweet-info {
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+}
+#tweet-info i {
+  font-size: 14px;
+  margin-bottom: 0;
+  font-weight: normal;
 }
 .tweets-feed .tweet a, a:visited, a:link{
   color: #000 !important;
