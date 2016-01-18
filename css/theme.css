@@ -440,6 +440,9 @@ p a,
   min-width: 230px;
   border-radius: 35px;
 }
+.modal button{
+  margin: 0px;
+}
 /*!
 // Backgrounds & Parallax
 // --------------------------------------------------*/
@@ -2356,4 +2359,10 @@ footer.classic .social-profiles {
 .social-profiles li a {
   color: #333333;
   font-size: 20px;
+}
+.twitter-logo i{
+  transition: all .5s;
+}
+.twitter-logo:hover i{
+  color:#E0DADA;
 }
