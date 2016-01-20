@@ -1,4 +1,4 @@
-var interval_id = null;
+interval_id = null;
 
 function interval() {
 	if (interval_id !== null){
