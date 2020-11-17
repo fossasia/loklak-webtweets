@@ -4,12 +4,11 @@ FOSSASIA Tweets with loklak: Implement Webtweets with loklak
 
 **Objective of the mini project**
 
-Implement web tweets with loklak and substitute the implementation with twitter. Improve former implementations and reduce dependencies on additional files in repositories as much as possible. Make use of anonymous loklak API at http://loklak.org/api.html
+Implement web tweets with loklak and substitute the implementation with twitter. Improve former implementations and reduce dependencies on additional files in repositories as much as possible. Make use of anonymous loklak API at http://api.loklak.org
 
 **Requirements**
 
-- use loklak API at http://loklak.org/api.html
-- 
+- use loklak API at http://api.loklak.org
 
 **Expected Outcome**
 
@@ -18,7 +17,7 @@ Implement web tweets with loklak and substitute the implementation with twitter.
 
 **Links**
 
-- loklak API http://loklak.org/api.html
+- loklak API http://api.loklak.org
 - Repository https://github.com/fossasia/loklak-webtweets
 - Sample http://fossasia.github.io/loklak-webtweets/
 
